@@ -621,130 +621,6 @@
 
 ![image](https://user-images.githubusercontent.com/71709401/140646001-f0309c5d-8c78-41a4-8291-bbde7dc487ca.png)
 
-- ID:	v1.NOT_LOGGED.EX.004
-<center style="
-    border-radius:4px;
-    border: 1px solid #cfd7e6;
-    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
-    padding: 1em;"
->
-@startuml
-  
-    left header
-         <font color=000 size=10><b>ID:</b> v1.NOT_LOGGED.EX.004
-         <font color=000 size=10><b>НАЗВА:</b> Відхілити доступ для неавторизованого користувача
-         <font color=000 size=10><b>УЧАСНИКИ:</b> Користувач, Система 
-         <font color=000 size=10><b>ПЕРЕДУМОВИ:</b>
-         <font color=000 size=10>Користувач не авторизований у системі.
-         <font color=000 size=10>Система відхилила запит неавторизованого користувача.
-         <font color=000 size=10><b>РЕЗУЛЬТАТ:</b> Повідомлення про відхиленя доступу для неавторизованого користувача.
-     end header
-     |Система|
-         start
-         : Надає користувачу повідомлення
-         про відхиленя доступу 
-         для неавторизованого користувача.;
-     |Користувач|
-         : Отримує повідомлення про 
-         відхиленя доступу для 
-         неавторизованого користувача.;
-     |Система|
-         : Завершує взаємодію;
-         stop;
-@enduml
-</center>
-
-- ID:	v1.COMMON.EX.001
-<center style="
-    border-radius:4px;
-    border: 1px solid #cfd7e6;
-    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
-    padding: 1em;"
->
-@startuml
-  
-    left header
-         <font color=000 size=10><b>ID:</b> v1.COMMON.EX.001
-         <font color=000 size=10><b>НАЗВА:</b> Повідомити про відсутність запитаних даних
-         <font color=000 size=10><b>УЧАСНИКИ:</b> Користувач, Система 
-         <font color=000 size=10><b>ПЕРЕДУМОВИ:</b>
-         <font color=000 size=10>Користувач авторизований у системі.
-         <font color=000 size=10>Користувач запитав дані, що відсутні у системі.
-         <font color=000 size=10><b>РЕЗУЛЬТАТ:</b> Повідомлення про відсутність запитаних даних.
-     end header
-     |Система|
-         start
-         : Надає користувачу повідомлення 
-         про відсутність запитаних даних.;
-     |Користувач|
-         : Отримує повідомлення 
-         про відсутність запитаних даних.;
-     |Система|
-         : Завершує взаємодію;
-         stop;
-@enduml
-</center>
-
-- ID:	v1.COMMON.EX.002
-<center style="
-    border-radius:4px;
-    border: 1px solid #cfd7e6;
-    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
-    padding: 1em;"
->
-@startuml
-  
-    left header
-         <font color=000 size=10><b>ID:</b> v1.COMMON.EX.002
-         <font color=000 size=10><b>НАЗВА:</b> Відхилити доступ користувача до даних
-         <font color=000 size=10><b>УЧАСНИКИ:</b> Користувач, Система 
-         <font color=000 size=10><b>ПЕРЕДУМОВИ:</b> Система відхилила запит користувача до даних.
-         <font color=000 size=10><b>РЕЗУЛЬТАТ:</b> Повідомлення про відхилення доступу до даних.
-     end header
-     |Система|
-         start
-         : Надає користувачу повідомлення 
-         про відхилення доступу до даних.;
-     |Користувач| 
-         : Отримує повідомлення 
-         про відхилення доступу до даних.;
-     |Система|
-         : Завершує взаємодію;
-         stop;
-@enduml
-</center>
-
-- ID:	v1.COMMON.EX.003
-<center style="
-    border-radius:4px;
-    border: 1px solid #cfd7e6;
-    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
-    padding: 1em;"
->
-@startuml
-  
-    left header
-         <font color=000 size=10><b>ID:</b> v1.COMMON.EX.003
-         <font color=000 size=10><b>НАЗВА:</b> Відхилити хибні дані
-         <font color=000 size=10><b>УЧАСНИКИ:</b> Користувач, Система 
-         <font color=000 size=10><b>ПЕРЕДУМОВИ:</b> 
-         <font color=000 size=10>Користувач авторизований у системі.
-         <font color=000 size=10>Користувач надіслав у систему хибні дані.
-         <font color=000 size=10><b>РЕЗУЛЬТАТ:</b> Повідомлення про відхилення хибних даних.
-     end header
-     |Система|
-         start
-         : Надає користувачу повідомлення 
-         про відхилення хибних даних.;
-     |Користувач|
-         : Отримує повідомлення 
-         про відхилення хибних даних.;
-     |Система|
-         : Завершує взаємодію;
-         stop;
-@enduml
-</center>
-
 - ID: v1.NOT_LOGGED.EX.001
 - НАЗВА: Відхилити запит на реєстрацію
 - УЧАСНИКИ: Користувач, Система
@@ -790,3 +666,149 @@
 
 ![v1.NOT_LOGGED.EX.003](https://user-images.githubusercontent.com/71408692/140170806-8c0ccd26-b5e1-4d90-85a8-cf5f28b30ed9.png)
 <br><br>
+
+- ID:	v1.NOT_LOGGED.EX.004
+<center style="
+    border-radius:4px;
+    border: 1px solid #cfd7e6;
+    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
+    padding: 1em;"
+>
+@startuml
+  
+    left header
+         <font color=000 size=10><b>ID:</b> v1.NOT_LOGGED.EX.004
+         <font color=000 size=10><b>НАЗВА:</b> Відхілити доступ для неавторизованого користувача
+         <font color=000 size=10><b>УЧАСНИКИ:</b> Користувач, Система 
+         <font color=000 size=10><b>ПЕРЕДУМОВИ:</b>
+         <font color=000 size=10>Користувач не авторизований у системі.
+         <font color=000 size=10>Система відхилила запит неавторизованого користувача.
+         <font color=000 size=10><b>РЕЗУЛЬТАТ:</b> Повідомлення про відхиленя доступу для неавторизованого користувача.
+     end header
+     |Користувач|
+         start
+         : Запитує доступ без 
+         авторизації в системі.;
+     |Система|
+         : Надає користувачу повідомлення
+         про відхиленя доступу 
+         для неавторизованого користувача.;
+     |Користувач|
+         : Отримує повідомлення про 
+         відхиленя доступу для 
+         неавторизованого користувача.;
+     |Система|
+         : Завершує взаємодію;
+         stop;
+@enduml
+</center>
+             
+![image](https://user-images.githubusercontent.com/37234379/143703757-383d7b6d-ee67-4dec-a18f-c737e9d9fb0b.png)
+
+- ID:	v1.COMMON.EX.001
+<center style="
+    border-radius:4px;
+    border: 1px solid #cfd7e6;
+    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
+    padding: 1em;"
+>
+@startuml
+  
+    left header
+         <font color=000 size=10><b>ID:</b> v1.COMMON.EX.001
+         <font color=000 size=10><b>НАЗВА:</b> Повідомити про відсутність запитаних даних
+         <font color=000 size=10><b>УЧАСНИКИ:</b> Користувач, Система 
+         <font color=000 size=10><b>ПЕРЕДУМОВИ:</b>
+         <font color=000 size=10>Користувач авторизований у системі.
+         <font color=000 size=10>Користувач запитав дані, що відсутні у системі.
+         <font color=000 size=10><b>РЕЗУЛЬТАТ:</b> Повідомлення про відсутність запитаних даних.
+     end header
+     |Користувач|
+         start
+         : Запитує доступ до 
+         відсутніх даних.;
+     |Система|
+         : Надає користувачу повідомлення 
+         про відсутність запитаних даних.;
+     |Користувач|
+         : Отримує повідомлення 
+         про відсутність запитаних даних.;
+     |Система|
+         : Завершує взаємодію;
+         stop;
+@enduml
+</center>
+             
+![image](https://user-images.githubusercontent.com/37234379/143704082-8509a39a-f222-4c5c-9606-8558f2bca81d.png)
+
+
+- ID:	v1.COMMON.EX.002
+<center style="
+    border-radius:4px;
+    border: 1px solid #cfd7e6;
+    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
+    padding: 1em;"
+>
+@startuml
+  
+    left header
+         <font color=000 size=10><b>ID:</b> v1.COMMON.EX.002
+         <font color=000 size=10><b>НАЗВА:</b> Відхилити доступ користувача до даних
+         <font color=000 size=10><b>УЧАСНИКИ:</b> Користувач, Система 
+         <font color=000 size=10><b>ПЕРЕДУМОВИ:</b> Система відхилила запит користувача до даних.
+         <font color=000 size=10><b>РЕЗУЛЬТАТ:</b> Повідомлення про відхилення доступу до даних.
+     end header
+     |Користувач|
+         start
+         : Запитує доступ до
+          даних.;
+     |Система|
+         : Надає користувачу повідомлення 
+         про відхилення доступу до даних.;
+     |Користувач| 
+         : Отримує повідомлення 
+         про відхилення доступу до даних.;
+     |Система|
+         : Завершує взаємодію;
+         stop;
+@enduml
+</center>
+             
+![image](https://user-images.githubusercontent.com/37234379/143704323-e9368b86-4323-441e-8acf-d2c28c9d68c9.png)
+
+- ID:	v1.COMMON.EX.003
+<center style="
+    border-radius:4px;
+    border: 1px solid #cfd7e6;
+    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
+    padding: 1em;"
+>
+@startuml
+  
+    left header
+         <font color=000 size=10><b>ID:</b> v1.COMMON.EX.003
+         <font color=000 size=10><b>НАЗВА:</b> Відхилити хибні дані
+         <font color=000 size=10><b>УЧАСНИКИ:</b> Користувач, Система 
+         <font color=000 size=10><b>ПЕРЕДУМОВИ:</b> 
+         <font color=000 size=10>Користувач авторизований у системі.
+         <font color=000 size=10>Користувач надіслав у систему хибні дані.
+         <font color=000 size=10><b>РЕЗУЛЬТАТ:</b> Повідомлення про відхилення хибних даних.
+     end header
+     |Користувач|
+         start
+         : Надсилає у систему
+         хибні дані.;
+     |Система|
+         : Надає користувачу повідомлення 
+         про відхилення хибних даних.;
+     |Користувач|
+         : Отримує повідомлення 
+         про відхилення хибних даних.;
+     |Система|
+         : Завершує взаємодію;
+         stop;
+@enduml
+</center>
+             
+![image](https://user-images.githubusercontent.com/37234379/143704619-10d6576f-c54c-4c2c-9612-3cb49ac0e8ac.png)
+
