@@ -1,11 +1,12 @@
 # Проєктування бази даних
 
-В рамках проекту розробляється: 
-## Модель бізнес-об'єктів 
+В рамках проекту розробляється:
+
+## Модель бізнес-об'єктів
 
 @startuml
 entity User #eeffff
-entity User.Name 
+entity User.Name
 entity Email
 entity Password
 entity Salt
@@ -16,7 +17,7 @@ entity Organization.Name
 entity Organization.Creation_date
 entity Creator #aaaeee
 entity Organization.Description #aaaeee
-entity Picture #aaaeee 
+entity Picture #aaaeee
 entity Address #aaaeee
 entity Poll
 
@@ -25,11 +26,11 @@ entity PollType.Description #aaaeee
 
 entity BlackListedUser #eeffff
 entity BL_User
-entity BL_Poll 
+entity BL_Poll
 
 entity WhiteListedUser #eeffff
 entity WL_User
-entity WL_Poll 
+entity WL_Poll
 
 entity Poll #eeffff
 entity Poll.Title
@@ -41,7 +42,6 @@ entity IsBlackList
 entity IsPrivate
 entity Link
 entity Poll.Type #eeffff
-
 
 entity QuestionType #eeffff
 entity QuestionType.Name
@@ -56,14 +56,12 @@ entity Question.Title
 entity Question.Description
 entity Question.Type
 
-
 entity Answer #eeffff
 entity Content
 
 entity PollResult #eeffff
 entity Date
 entity Respondent
-
 
 entity QuestionFeedback #eeffff
 entity QF_Comment
@@ -76,79 +74,77 @@ entity MaxRating #aaaeee
 entity Reviewer
 entity PF_Poll
 
+User.Name --_ User
+Email -r-_ User
+Password --_ User
+Salt -l-_ User
+Authorization_Token -u-_ User
+Poll "0,_"--_"0,_" User
+Organization "0,_"--_"1,_" User
+PollFeedback "0,_"--\*"1" User
 
+Organization.Name -l-_ Organization
+Organization.Creation_date -u-_ Organization
+Creator _-d-_ Organization
+Organization.Description --_ Organization
+Picture -d-_ Organization
+Address -r-_ Organization
+Poll "0,_"--\*"1" Organization
 
-User.Name --* User
-Email -r-* User
-Password --* User
-Salt -l-* User
-Authorization_Token -u-* User
-Poll "0,*"--*"0,*" User
-Organization "0,*"--*"1,*" User
-PollFeedback "0,*"--*"1" User
+PollType.Name -u-_ Poll.Type
+PollType.Description --_ Poll.Type
 
-Organization.Name -l-* Organization
-Organization.Creation_date -u-* Organization
-Creator *-d-* Organization
-Organization.Description --* Organization
-Picture -d-* Organization
-Address -r-* Organization
-Poll "0,*"--*"1" Organization
+BlackListedUser -u-_ BL_User
+BlackListedUser --_ BL_Poll
+BlackListedUser "1"--"0,_" User
+BlackListedUser "1"--"0,_" Organization
+WhiteListedUser -u-_ WL_User
+WhiteListedUser --_ WL_Poll
+WhiteListedUser "1"--"0,_" User
+WhiteListedUser "1"--"0,_" Organization
 
-PollType.Name -u-* Poll.Type
-PollType.Description --* Poll.Type
+Poll.Title -u-_ Poll
+Poll.Description -u-_ Poll
+Poll.CreationDate --_ Poll
+End_Date --_ Poll
+IsWhiteList --_ Poll
+IsBlackList -l-_ Poll
+IsPrivate -r-_ Poll
+Link -u-_ Poll
+Poll.Type -d-_ Poll
+Question "1"--_"1,\*" Poll
 
-BlackListedUser -u-* BL_User
-BlackListedUser --* BL_Poll
-BlackListedUser "1"--"0,*" User
-BlackListedUser "1"--"0,*" Organization
-WhiteListedUser -u-* WL_User
-WhiteListedUser --* WL_Poll
-WhiteListedUser "1"--"0,*" User
-WhiteListedUser "1"--"0,*" Organization
-
-Poll.Title -u-* Poll
-Poll.Description -u-* Poll
-Poll.CreationDate --* Poll
-End_Date --* Poll
-IsWhiteList --* Poll
-IsBlackList -l-* Poll
-IsPrivate -r-* Poll
-Link -u-* Poll
-Poll.Type -d-* Poll
-Question "1"--*"1,*" Poll
-
-QuestionType.Name -u-* QuestionType 
-QuestionType.Description -d-* QuestionType
+QuestionType.Name -u-_ QuestionType
+QuestionType.Description -d-_ QuestionType
 QuestionType -- Question
 QuestionType -- Answer
 
-Text --* AnswerOption
-Index --* AnswerOption
+Text --_ AnswerOption
+Index --_ AnswerOption
 
-AnswerOption --* Question
-Question --* Question.Type
-Question.Title --* Question
-Question.Description -l-* Question
-AnswerFeedback "0,*"--*"1,*" Question
+AnswerOption --_ Question
+Question --_ Question.Type
+Question.Title --_ Question
+Question.Description -l-_ Question
+AnswerFeedback "0,_"--_"1,\*" Question
 
-Answer --* Content
-Answer --* Question
+Answer --_ Content
+Answer --_ Question
 
-Date --* PollResult
-Comment --* PollResult
-Respondent --* PollResult
-Answer "1,*"--*"1" PollResult
+Date --_ PollResult
+Comment --_ PollResult
+Respondent --_ PollResult
+Answer "1,_"--\*"1" PollResult
 
-QF_Comment --* QuestionFeedback
-QuestionFeedback *--* QF_Question
+QF_Comment --_ QuestionFeedback
+QuestionFeedback _--\* QF_Question
 
-GeneralComment -l-* PollFeedback
-Rating --* PollFeedback
-MaxRating --* PollFeedback
-Reviewer -u-* PollFeedback
-PF_Poll -u-* PollFeedback
-QuestionFeedback "0,*"-u-*"1,*" PollFeedback
+GeneralComment -l-_ PollFeedback
+Rating --_ PollFeedback
+MaxRating --_ PollFeedback
+Reviewer -u-_ PollFeedback
+PF_Poll -u-_ PollFeedback
+QuestionFeedback "0,_"-u-_"1,_" PollFeedback
 
 @enduml
 
@@ -157,97 +153,95 @@ QuestionFeedback "0,*"-u-*"1,*" PollFeedback
 @startuml
 
 entity User <<ENTITY>>{
-    Name: TEXT
-    Email: TEXT
-    Password: TEXT
-    Salt: TEXT
-    Authorization_Token: TEXT
+Name: TEXT
+Email: TEXT
+Password: TEXT
+Salt: TEXT
+Authorization_Token: TEXT
 }
 
 entity Organization <<ENTITY>>{
-    Name: TEXT
-    Creation_date: DATE
-    Creator: TEXT
-    Description: TEXT
-    Picture: IMAGE
-    Address: TEXT
+Name: TEXT
+Creation_date: DATE
+Creator: TEXT
+Description: TEXT
+Picture: IMAGE
+Address: TEXT
 }
 
 entity BlackListedUser <<ENTITY>>{
-    BL_User: TEXT
-    BL_Poll: TEXT
+BL_User: TEXT
+BL_Poll: TEXT
 }
 
 entity WhiteListedUser <<ENTITY>>{
-    WL_User: TEXT
-    WL_Poll: TEXT
+WL_User: TEXT
+WL_Poll: TEXT
 }
 
 entity Poll <<ENTITY>>{
-    Title: TEXT
-    Description: TEXT
-    CreationDate: DATE
-    End_Date: TEXT
-    IsWhiteList: BOOL
-    IsBlackList: BOOL
-    IsPrivate: BOOL
-    Link: TEXT
-    Type: TEXT
+Title: TEXT
+Description: TEXT
+CreationDate: DATE
+End_Date: TEXT
+IsWhiteList: BOOL
+IsBlackList: BOOL
+IsPrivate: BOOL
+Link: TEXT
+Type: TEXT
 }
 
 entity Question <<ENTITY>>{
-    Title: TEXT
-    Description: TEXT
-    Type: TEXT
+Title: TEXT
+Description: TEXT
+Type: TEXT
 }
 
 entity Answer <<ENTITY>>{
-    Content: TEXT
-    Question: TEXT
-    QuestionType: TEXT
+Content: TEXT
+Question: TEXT
+QuestionType: TEXT
 }
 
 entity PollResult <<ENTITY>>{
-    Date: DATE
-    PR_Comment: TEXT
-    Respondent: TEXT
+Date: DATE
+PR_Comment: TEXT
+Respondent: TEXT
 }
 
 entity QuestionFeedback <<ENTITY>>{
-    QF_Comment: TEXT
-    QF_Qeustion: TEXT
+QF_Comment: TEXT
+QF_Qeustion: TEXT
 }
 
 entity PollFeedback <<ENTITY>>{
-    GeneralComment: TEXT
-    Rating: NUMBER
-    MaxRating: NUMBER
-    Reviewer: TEXT
-    PF_Poll: TEXT
+GeneralComment: TEXT
+Rating: NUMBER
+MaxRating: NUMBER
+Reviewer: TEXT
+PF_Poll: TEXT
 }
 
-Poll "0,*"--*"0,*" User
-Organization "0,*"--*"1,*" User
-PollFeedback "0,*"--*"1" User
+Poll "0,_"--_"0,_" User
+Organization "0,_"--_"1,_" User
+PollFeedback "0,_"--_"1" User
 
-Poll "0,*"--*"1" Organization
+Poll "0,_"--_"1" Organization
 
-BlackListedUser "1"--"0,*" User
-BlackListedUser "1"--"0,*" Organization
+BlackListedUser "1"--"0,_" User
+BlackListedUser "1"--"0,_" Organization
 
-WhiteListedUser "1"--"0,*" User
-WhiteListedUser "1"--"0,*" Organization
+WhiteListedUser "1"--"0,_" User
+WhiteListedUser "1"--"0,_" Organization
 
+Question "1"--_"1,_" Poll
 
-Question "1"--*"1,*" Poll
+Answer "1,_"--_"1" PollResult
 
-Answer "1,*"--*"1" PollResult
-
-
-QuestionFeedback "0,*"--*"1,*" PollFeedback
+QuestionFeedback "0,_"--_"1,\*" PollFeedback
 
 @enduml
-  
+
 ## Реляційна схема
 
-![eer](https://user-images.githubusercontent.com/31734600/144898655-802598be-ae4f-47d1-8a1e-8f0684b164e2.png)
+![eer](https://user-images.githubusercontent.com/31734600/145624893-81f1abe5-f15b-46d0-9325-3e609cf31dc1.png)
