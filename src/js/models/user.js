@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     {
       id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
       },
       Name: {
@@ -22,10 +22,6 @@ module.exports = function(sequelize, DataTypes) {
       },
       Salt: {
         type: DataTypes.STRING(45),
-        allowNull: false,
-      },
-      Token: {
-        type: DataTypes.STRING(100),
         allowNull: false,
       },
     },

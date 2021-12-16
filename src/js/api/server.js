@@ -8,6 +8,7 @@ app.get("/", async (req, res) => {
   res.send("Hello");
 });
 for (const route of routes) {
+  console.log(route);
   app[route.method](route.path, route.func);
 }
 
